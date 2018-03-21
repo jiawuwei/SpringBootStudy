@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jia.springboot.modules.dao.StudentInfoMapper">
+    <insert id="insert" parameterType="com.jia.springboot.modules.pojo.StudentInfo">
+        insert into t_student(id,name) values(#{id},#{name})
+    </insert>
+
+    <select id="getById"  resultType="com.jia.springboot.modules.pojo.StudentInfo">
+        select * from t_student limit 1
+    </select>
+
+    <update id="update" parameterType="com.jia.springboot.modules.pojo.StudentInfo">
+        update t_student set name = #{name} where id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="com.jia.springboot.modules.pojo.StudentInfo">
+        delete from t_student where id = #{id}
+    </delete>
+</mapper>
