@@ -26,11 +26,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			</dataSource>
 		</environment>
 	</environments>
+	
+	
 	<mappers>
 		<mapper resource="com/dao/impl/User.xml"/>
 	</mappers>
 	 
-	<!-- <typeHandlers>
+	<typeHandlers>
 		<typeHandler handler="" javaType=""/>
 	</typeHandlers>
 	第二种方式配置数据库
@@ -48,5 +50,5 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 				<property name="password" value="${password}"/>
 			</dataSource>
 		</environment>
-	</environments> -->
+	</environments>
 </configuration>
