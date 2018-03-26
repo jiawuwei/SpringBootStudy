@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 数据库连接环境  第一种方式配置数据库-->
+	<environments default="mysql">
+		<!-- 配置数据库的driver，url，username，password 可以配置多个数据库-->
+		<environment id="mysql">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost/mybatis_01"/>
+				<property name="username" value="root"/>
+				<property name="password" value="root"/>
+			</dataSource>
+		</environment>
+		<environment id="oracle">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.oracle.jdbc.Driver"/>
+				<property name="url" value=""/>
+				<property name="" value=""/>
+				<property name="" value=""/>
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/dao/impl/User.xml"/>
+	</mappers>
+	 
+	<!-- <typeHandlers>
+		<typeHandler handler="" javaType=""/>
+	</typeHandlers>
+	第二种方式配置数据库
+	<properties resource="resource/config.properties">
+		<property name="driver" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql:///vcm"/>
+	</properties>
+	<environments default="">
+		<environment id="mysql_1">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${username}"/>
+				<property name="password" value="${password}"/>
+			</dataSource>
+		</environment>
+	</environments> -->
+</configuration>
